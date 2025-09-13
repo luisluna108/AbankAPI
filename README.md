@@ -29,3 +29,5 @@ Beaver $2a$11$cakTi3daBD4fOteOFYVveellrmv6EO7sya4ZrrpT/ca4ZbZiyuAxG
 Tambien se agrega una carpeta llamada "Capturas de funcionalidad" para visualizar los endpoint en ejecucion en Swagger.
 
 6- Endpoint Eliminar usuarios DELETE /api/V1/users/{id} se elimina los registros dependiendo del valor id colocado dicho registros se vera afectado
+
+Se agrega una carpeta llamada "Capturas de funcionalidad" para visualizar la funcionalidad de los endpoints en Swagger
