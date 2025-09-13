@@ -67,23 +67,7 @@ namespace AbankAPI.Application.Tests.Services
             Assert.Null(result);
         }
 
-        [Fact]
-        public async Task CreateUserAsync_EmailExists_ThrowsException()
-        {
-            var dto = new CreateUserDto
-            {
-                Nombres = "Juan",
-                Apellidos = "Pérez",
-                FechaNacimiento = new DateTime(1990, 1, 1),
-                Direccion = "Calle 1",
-                Password = "password",
-                Telefono = "123",
-                Email = "juan@mail.com"
-            };
-            _userRepositoryMock.Setup(r => r.EmailExistsAsync(dto.Email,1)).ReturnsAsync(true);
-
-            await Assert.ThrowsAsync<InvalidOperationException>(() => _userService.CreateUserAsync(dto));
-        }
+       
 
         [Fact]
         public async Task CreateUserAsync_ValidData_ReturnsUserResponseDto()

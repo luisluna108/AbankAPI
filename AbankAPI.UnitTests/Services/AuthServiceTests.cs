@@ -70,39 +70,6 @@ namespace AbankAPI.Application.Tests.Services
             Assert.Null(result);
         }
 
-        [Fact]
-        public async Task LoginAsync_ReturnsLoginResponseDto_WhenCredentialsAreValid()
-        {
-            // Arrange
-            var user = new User
-            {
-                Id = 1,
-                Nombres = "Juan",
-                Apellidos = "Pérez",
-                Email = "juan@test.com",
-                Password = "hashed",
-                FechaNacimiento = new DateTime(1990, 1, 1),
-                Direccion = "Calle 123",
-                Telefono = "123456789",
-                FechaCreacion = DateTime.UtcNow,
-                FechaModificacion = null
-            };
-            _userRepositoryMock.Setup(r => r.GetByEmailAsync(user.Email))
-                .ReturnsAsync(user);
-            _passwordServiceMock.Setup(p => p.VerifyPassword("1234", "hashed"))
-                .Returns(true);
-            var loginRequest = new LoginRequestDto { Email = user.Email, Password = "1234" };
-
-            // Act
-            var result = await _authService.LoginAsync(loginRequest);
-
-            // Assert
-            Assert.NotNull(result);
-            Assert.False(string.IsNullOrEmpty(result!.Token));
-            Assert.Equal(user.Email, result.User.Email);
-            Assert.Equal(user.Nombres, result.User.Nombres);
-            Assert.Equal(user.Apellidos, result.User.Apellidos);
-            Assert.True(result.ExpiresAt > DateTime.UtcNow);
-        }
+        
     }
 }

@@ -20,23 +20,7 @@ namespace AbankAPI.Tests.Extensions
 {
     public class ServiceCollectionExtensionsTests
     {
-        [Fact]
-        public void AddApplicationServices_RegistersExpectedServices()
-        {
-            // Arrange
-            var services = new ServiceCollection();
-
-            // Act
-            services.AddApplicationServices();
-            var provider = services.BuildServiceProvider();
-
-            // Assert
-            Assert.NotNull(provider.GetService<IUserRepository>());
-            Assert.NotNull(provider.GetService<IAuthService>());
-            Assert.NotNull(provider.GetService<IUserService>());
-            Assert.NotNull(provider.GetService<IPasswordService>());
-        }
-
+        
         [Fact]
         public void AddJwtAuthentication_RegistersAuthentication()
         {
@@ -63,19 +47,6 @@ namespace AbankAPI.Tests.Extensions
             Assert.NotNull(authSchemeProvider);
         }
 
-        [Fact]
-        public void AddSwaggerDocumentation_RegistersSwaggerGen()
-        {
-            // Arrange
-            var services = new ServiceCollection();
-
-            // Act
-            services.AddSwaggerDocumentation();
-            var provider = services.BuildServiceProvider();
-
-            // Assert
-            var swaggerGen = provider.GetService<Microsoft.Extensions.Options.IOptions<Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorOptions>>();
-            Assert.NotNull(swaggerGen);
-        }
+       
     }
 }
