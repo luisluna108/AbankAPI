@@ -1,4 +1,5 @@
 Prueba Tecnica Desarrollo ABANK 🚀
+
 Pasos para ejecutar el proyecto
 
 1- Dentro de la carpeta Base de Datos encontrara un archivo sql llamado Query Tablas SQL este se debe ejecutar para crear la tabla y registros.
