@@ -8,7 +8,15 @@ Pasos para ejecutar el proyecto
 
 EndPoints que se encuentra dentro del proyecto
 
-1- Endpoint Login POST /api/V1/auth/login en donde debe ingresar con el siguientes credenciales
+1- Endpoint Login POST /api/V1/auth/login en donde debe ingresar con el siguientes credenciales. 
+
+{
+
+  "email": "prueba@gmail.com",
+  
+  "password": "123456"
+  
+}
 
 Obtendra un token el cual debera copiar y pegar (si usa swagger) en la parte superior donde se encuentra un candado de esta forma poder acceder a su funcionalidad. Se debera colocar la palabra Bearer seguido del token generado. Por ejemplo 
 Beaver $2a$11$cakTi3daBD4fOteOFYVveellrmv6EO7sya4ZrrpT/ca4ZbZiyuAxG
